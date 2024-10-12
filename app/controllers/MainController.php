@@ -6,8 +6,8 @@ class MainController {
 
     public static function homepage() {
         //remember to route relative to index.php
-        //use include and exit to return an HTML page
-        include './assets/views/main/homepage.html';
+        //require page and exit to return an HTML page
+        require './assets/views/main/homepage.html';
         exit();
     }
 
