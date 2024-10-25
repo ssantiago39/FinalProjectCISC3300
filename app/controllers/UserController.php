@@ -3,14 +3,11 @@
 namespace app\controllers;
 use app\models\User;
 
-class UserController {
-    public static function getUsers()
-    {
+class UserController extends Controller {
+    public function getUsers() {
         $userModel = new User();
-        //if we are returning json we need to set the content type
-        header("Content-Type: application/json");
         $users = $userModel->getAllUsers();
-        echo json_encode($users);
+        $this->returnJSON($users);
         exit();
     }
 
@@ -18,8 +15,8 @@ class UserController {
 
     }
 
-    public function viewUsers() {
-        
+    public function usersView() {
+        $this->returnView('./assets/views/users/usersView.html');
     }
 
 }

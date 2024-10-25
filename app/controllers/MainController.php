@@ -2,16 +2,15 @@
 
 namespace app\controllers;
 
-class MainController {
+class MainController extends Controller {
 
-    public static function homepage() {
+    public function homepage() {
         //remember to route relative to index.php
         //require page and exit to return an HTML page
-        require './assets/views/main/homepage.html';
-        exit();
+        $this->returnView('./assets/views/main/homepage.html');
     }
 
-    public static function notFound() {
+    public function notFound() {
     }
 
 }

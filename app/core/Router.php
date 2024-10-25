@@ -5,8 +5,7 @@ namespace app\core;
 use app\controllers\MainController;
 use app\controllers\UserController;
 
-class Router
-{
+class Router {
     public $urlArray;
 
     function __construct()
@@ -22,13 +21,21 @@ class Router
 
     protected function handleMainRoutes() {
         if ($this->urlArray[1] === '' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-            MainController::homepage();
+            $mainController = new MainController();
+            $mainController->homepage();
         }
     }
 
     protected function handleUserRoutes() {
         if ($this->urlArray[1] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-            UserController::getUsers();
+            $userController = new UserController();
+            $userController->usersView();
+        }
+
+        //give json/API requests a api prefix
+        if ($this->urlArray[1] === 'api' && $this->urlArray[2] === 'users'  && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $userController = new UserController();
+            $userController->getUsers();
         }
     }
 }

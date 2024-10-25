@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-class Model {
+abstract class Model {
 
     public function findAll() {
         $query = "select * from $this->table";
