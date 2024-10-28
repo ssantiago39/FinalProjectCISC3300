@@ -11,7 +11,6 @@ class Router {
     function __construct()
     {
         $this->urlArray = $this->routeSplit();
-        var_dump($this->urlArray);
         $this->handleMainRoutes();
         $this->handleUserRoutes();
     }
