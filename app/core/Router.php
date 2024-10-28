@@ -11,12 +11,14 @@ class Router {
     function __construct()
     {
         $this->urlArray = $this->routeSplit();
+        var_dump($this->urlArray);
         $this->handleMainRoutes();
         $this->handleUserRoutes();
     }
 
     protected function routeSplit() {
-        return explode("/", $_SERVER["REQUEST_URI"]);
+        $removeQueryParams = strtok($_SERVER["REQUEST_URI"], '?');
+        return explode("/", $removeQueryParams);
     }
 
     protected function handleMainRoutes() {
@@ -33,7 +35,7 @@ class Router {
         }
 
         //give json/API requests a api prefix
-        if ($this->urlArray[1] === 'api' && $this->urlArray[2] === 'users'  && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($this->urlArray[1] === 'api' && $this->urlArray[2] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $userController = new UserController();
             $userController->getUsers();
         }
