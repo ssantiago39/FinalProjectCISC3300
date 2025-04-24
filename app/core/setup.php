@@ -1,16 +1,13 @@
 <?php
 
-//require our files, remember should be relative to index.php
-require '../app/core/Router.php';
-require '../app/models/Model.php';
-require '../app/controllers/Controller.php';
-require '../app/controllers/MainController.php';
-require '../app/controllers/UserController.php';
-require '../app/models/User.php';
+require __DIR__ . '/Router.php';
+require __DIR__ . '/../controllers/Controller.php';
+require __DIR__ . '/../controllers/MainController.php';
+require __DIR__ . '/../controllers/ProductController.php';
+require __DIR__ . '/../models/Model.php';
+require __DIR__ . '/../models/Product.php';
 
-
-//set up env variables
-$env = parse_ini_file('../.env');
+$env = parse_ini_file(__DIR__ . '/../../.env');
 
 define('DBNAME', $env['DBNAME']);
 define('DBHOST', $env['DBHOST']);

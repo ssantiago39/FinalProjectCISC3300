@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sean's Ice Cream</title>
+    <link rel="stylesheet" href="/assets/style/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header class="p-3 mb-4 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="mb-0">Sean's Ice Cream</h1>
+            <nav>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/public/index.php?url=products">Ice Cream</a></li>
+                        <li><a class="dropdown-item" href="#purpose">Our Purpose</a></li>
+                        <li><a class="dropdown-item" href="#about">About Us</a></li>
+                        <li><a class="dropdown-item" href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-image">
+          <div class="hero-box">
+            <h2 class="mb-3">Welcome to Sean’s Ice Cream 🍦</h2>
+            <p class="lead">
+              Sean's Ice Cream, your spot for the best ice cream in town!  
+              We serve a bunch of flavors made fresh daily, just for you!
+            </p>
+            <a href="/public/assets/views/main/all-flavors.html" class="btn btn-primary mt-3">Explore Flavors</a>
+            <a href="#featured" class="btn btn-outline-primary mt-3 ms-2">See Featured</a>
+          </div>
+        </div>
+      </section>
+      
+      
+
+    <section id="featured" class="container py-4">
+        <h3 class="text-center mb-4">Featured Flavors</h3>
+        <div class="row g-4">
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/vanilla.jpg" alt="Vanilla">
+                <h5>Vanilla</h5>
+            </div>
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/strawberry.jpg" alt="Strawberry">
+                <h5>Strawberry</h5>
+            </div>
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/chocolate.jpg" alt="Chocolate">
+                <h5>Chocolate</h5>
+            </div>
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/espresso.jpg" alt="Espresso Nuggets">
+                <h5>Espresso Nuggets</h5>
+            </div>
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/cokkiesNcream.webp" alt="Cookies and Cream">
+                <h5>Cookies & Cream</h5>
+            </div>
+            <div class="col-md-4 text-center featured-flavor">
+                <img src="/public/assets/images/mango.jpg" alt="Mango">
+                <h5>Mango</h5>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="crafted" style="background-color: #dcd4f7; padding: 3rem 0;">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+              <img src="/public/assets/images/icecream-process.jpg" alt="Handcrafted Ice Cream" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="col-md-6">
+              <h3 style="font-weight: 600;">The Best Ice Cream Around!</h3>
+              <p>Sean’s Ice Cream is handmade in small batches with care and creativity in each flavor. We prioritize freshness by minimizing its time in storage and delivering directly from our kitchen to your tastebuds.</p>
+              <p>Our team makes swirls in delicious fudge, the freshest fruit, and makes sure every batch is churned with precision. Whether it’s classic vanilla or our signature espresso nuggets, each scoop is an explostion of flavor.</p>
+              <a href="/public/assets/views/main/about-ice-cream.html" class="btn btn-outline-primary mt-3">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    
+      <section id="purpose" class="container py-4">
+        <h3>Our Purpose</h3>
+        <p>
+            At Sean’s Ice Cream, our mission is very simple: bring happy smiles to faces, one scoop at a time.  
+            We believe ice cream should be more than dessert — it should be an experience and something to be shared.  
+            That’s why we handcraft every flavor with care creativity, and a huge amount of fun.  
+            We’re make sure to use real ingredients, support the local businesses, and never ever cut corners.  
+            Whether you're day's been bright or gloomy, there's always a scoop waiting just for you.
+        </p>
+    </section>
+    
+    <section id="about" class="container py-4">
+        <h3>About Us</h3>
+        <p>
+            Founded in the heart of Fordham, Sean’s Ice Cream is a small-batch, community-first ice cream shop that celebrates 
+            both timeless classics and bold new flavors. What started off as a small childhood dream grew into a 
+            beloved neighborhood shop, known for its warm, friendly service and unforgettable ice cream scoops.  
+            We believe in flavor over flashyness, quality over shortcuts, and joy in every bite.
+        </p>
+    </section>
+    
+    <section id="contact" class="container py-4">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:info@seansicecream.com">info@seansicecream.com</a></p>
+        <p>Phone: <a href="tel:9991234567">(999) 123-4567</a></p>
+    </section>
+    
+    <section id="location" class="container py-5 text-center">
+        <h3>Our Location</h3>
+        <p>📍 Visit us in beautiful <strong>Fordham, NY</strong><br>Right where the most flavorful scoops are scooped.</p>
+        <img src="/public/assets/images/fordham.jpg" alt="Our shop in Fordham, NY" class="img-fluid rounded shadow mt-3" style="max-width: 600px;">
+    </section>
+    
+
+    <section id="location" class="container py-4 text-center">
+        <h3>Our Location</h3>
+        <p>
+            Sean’s Ice Cream is proudly based in <strong>Fordham, NY</strong><br>
+            Stop by for a scoop and say hi!
+        </p>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer style="background-color: #dcd4f7; color: #333; padding: 3rem 1rem 1rem;">
+        <div class="container">
+          <div class="row g-4">
+            
+            <div class="col-md-4">
+              <h6>SIGN UP FOR OUR NEWSLETTER</h6>
+              <p class="small">Receive the latest flavor drops, deals, and ice cream joy!</p>
+              <form class="d-flex">
+                <input type="email" placeholder="Email Address" class="form-control me-2" style="max-width: 250px;">
+                <button class="btn btn-dark">Continue</button>
+              </form>
+            </div>
+      
+            <div class="col-md-2">
+              <h6>Legal</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Privacy Policy</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Terms of Use</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Accessibility</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-2">
+              <h6>Help</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Contact Us</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Where to Buy</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">FAQ</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-4">
+              <h6>Location</h6>
+              <p class="small">United States | <a href="#" class="text-decoration-underline text-dark">Change</a></p>
+              <h6>Language</h6>
+              <p class="small">English | <a href="#" class="text-decoration-underline text-dark">Ver en español</a></p>
+      
+              
+      
+          <hr class="text-dark my-4" />
+          <p class="text-center small mb-0">© 2025 Sean's Ice Cream. All rights reserved.</p>
+        </div>
+      </footer>
+      
+</body>
+</html>
+
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    header {
+        background-color: #dcd4f7;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .dropdown-menu a {
+        color: inherit;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    .dropdown-menu a:hover {
+        text-decoration: underline;
+    }
+
+    .featured-flavor img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .featured-flavor h5 {
+        margin-top: 0.75rem;
+    }
+
+    .hero-banner {
+        position: relative;
+        margin-bottom: 2rem;
+     }
+
+    .hero-image {
+        background-image: url('/public/assets/images/hero-icecream.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        position: relative;
+    }
+
+    .hero-box {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        max-width: 400px;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .hero-box {
+            position: static;
+            transform: none;
+            margin: 1rem auto;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .hero-image {
+            height: auto;
+            padding-bottom: 3rem;
+        }
+    }
+    
+</style>

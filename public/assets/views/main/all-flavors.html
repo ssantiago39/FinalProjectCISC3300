@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Flavors – Sean's Ice Cream</title>
+  <link rel="stylesheet" href="/assets/style/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <header class="p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="mb-0">Sean's Ice Cream</h1>
+      <a href="/public/index.php" class="btn btn-outline-light">Home</a>
+    </div>
+  </header>
+
+  <section class="container py-4 text-center">
+    <h2>All Our Flavors</h2>
+    <p>Here’s a look at our current lineup of handcrafted flavors!</p>
+
+    <div class="flavor-gallery">
+      <div class="flavor-card">
+        <img src="/public/assets/images/vanilla.jpg" alt="Vanilla">
+        <h5>Vanilla</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/chocolate.jpg" alt="Chocolate">
+        <h5>Chocolate</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/strawberry.jpg" alt="Strawberry">
+        <h5>Strawberry</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/espresso.jpg" alt="Espresso Nuggets">
+        <h5>Espresso Nuggets</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/cokkiesNcream.webp" alt="Cookies N Cream">
+        <h5>Cookies N Cream</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/mango.jpg" alt="Mango">
+        <h5>Mango</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/blueberry.jpg" alt="Blueberry Swirl">
+        <h5>Blueberry Swirl</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/Coconut.jpg" alt="Coconut">
+        <h5>Coconut</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/Lemon.jpeg" alt="Lemon">
+        <h5>Lemon</h5>
+      </div>
+      <div class="flavor-card">
+        <img src="/public/assets/images/PumpkinSeed.jpg" alt="Pumpkin Seed">
+        <h5>Pumpkin Seed</h5>
+      </div>
+    </div>
+
+    <a href="/public/index.php" class="btn btn-primary btn-back">← Back to Home</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #dcd4f7;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .flavor-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .flavor-card {
+      background-color: #f9f7ff;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .flavor-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-back {
+      margin-top: 2rem;
+    }
+  </style>

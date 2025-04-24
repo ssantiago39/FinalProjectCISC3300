@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Flavor</title>
+    <link rel="stylesheet" href="/assets/styles/icecream.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <a href="/public/index.php?url=products" class="button">Back to Flavors</a>
+        <h2>Delete Ice Cream Flavor</h2>
+        <p id="delete-flavor-name">Loading flavor info...</p>
+        <button class="button delete" id="delete-button">Delete</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+
+            $.ajax({
+                url: `/public/index.php?url=api/products/${id}`,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    const product = data[0];
+                    $('#delete-flavor-name').text(`Are you sure you want to delete "${product.flavor}"?`);
+                },
+                error: function () {
+                    $('#delete-flavor-name').text("Could not load flavor.");
+                    $('#delete-button').hide();
+                }
+            });
+
+            $('#delete-button').click(function () {
+                $.ajax({
+                    url: `/public/index.php?url=api/products/${id}`,
+                    type: "DELETE",
+                    dataType: "json",
+                    success: function () {
+                        window.location.replace("/public/index.php?url=products");
+                    },
+                    error: function () {
+                        alert("Failed to delete flavor.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+<style>
+body {
+    background-image: url('/public/assets/images/bg-delete.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); 
+    padding: 2rem;
+    border-radius: 0.75rem;
+    max-width: 600px;
+    margin: 4rem auto;
+     box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #c9302c;
+    color: #fff;
+    margin-top: 1rem;
+}
+.button:hover {
+    background-color: #c9302c;
+}
+</style>

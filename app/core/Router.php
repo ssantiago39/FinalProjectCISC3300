@@ -3,39 +3,77 @@
 namespace app\core;
 
 use app\controllers\MainController;
-use app\controllers\UserController;
+use app\controllers\ProductController;
 
 class Router {
     public $uriArray;
 
-    function __construct() {
+    public function __construct() {
+    
         $this->uriArray = $this->routeSplit();
+    
         $this->handleMainRoutes();
-        $this->handleUserRoutes();
+        $this->handleProductRoutes();
     }
+    
 
     protected function routeSplit() {
-        $removeQueryParams = strtok($_SERVER["REQUEST_URI"], '?');
-        return explode("/", $removeQueryParams);
+        return isset($_GET['url']) ? explode("/", trim($_GET['url'], "/")) : [];
     }
+    
 
     protected function handleMainRoutes() {
-        if ($this->uriArray[1] === '' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if (!isset($this->uriArray[0]) || $this->uriArray[0] === '') {
             $mainController = new MainController();
             $mainController->homepage();
         }
     }
 
-    protected function handleUserRoutes() {
-        if ($this->uriArray[1] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-            $userController = new UserController();
-            $userController->usersView();
+    protected function handleProductRoutes() {
+        $controller = new ProductController();
+
+        if ($this->uriArray[0] === 'products' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $controller->showAllView();
         }
 
-        //give json/API requests a api prefix
-        if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-            $userController = new UserController();
-            $userController->getUsers();
+        if ($this->uriArray[0] === 'add-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $controller->createView();
+        
+        }
+
+        if ($this->uriArray[0] === 'update-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $controller->editView();
+        }
+
+        if ($this->uriArray[0] === 'delete-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+            $controller->deleteView();
+        }
+
+        if ($this->uriArray[0] === 'api' && $this->uriArray[1] === 'products') {
+            $id = $this->uriArray[2] ?? null;
+
+            switch ($_SERVER['REQUEST_METHOD']) {
+                case 'GET':
+                    if ($id) {
+                        $controller->getProductByID($id);
+                    } else {
+                        $controller->getAllProducts();
+                    }
+                    break;
+
+                case 'POST':
+                    $controller->saveProduct();
+                    break;
+
+                case 'PUT':
+                    $controller->updateProduct($id);
+                    break;
+
+                case 'DELETE':
+                    $controller->deleteProduct($id);
+                    break;
+            }
         }
     }
 }
+

@@ -2,17 +2,20 @@
 
 namespace app\models;
 
+use PDO;
+use PDOException;
+
 abstract class Model {
 
-    public function findAll() {
-        $query = "select * from $this->table";
-        return $this->query($query);
-    }
-
     private function connect() {
-        $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
-        $con = new \PDO($string, DBUSER, DBPASS);
-        return $con;
+        try {
+            $string = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
+            $con = new PDO($string, DBUSER, DBPASS);
+            $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $con;
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }
     }
 
     public function query($query, $data = []) {
@@ -20,13 +23,11 @@ abstract class Model {
         $stm = $con->prepare($query);
         $check = $stm->execute($data);
         if ($check) {
-            //return as an associated array
-            $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
             if (is_array($result) && count($result)) {
                 return $result;
             }
         }
         return false;
     }
-
 }

@@ -5,7 +5,7 @@ namespace app\controllers;
 abstract class Controller {
 
     public function returnView($pathToView) {
-        require $pathToView;
+        require __DIR__ . '/../../' . $pathToView;
         exit();
     }
 
@@ -14,6 +14,5 @@ abstract class Controller {
         echo json_encode($json);
         exit();
     }
-
-
 }
+  

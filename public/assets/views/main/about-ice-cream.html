@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How Our Ice Cream Is Made – Sean's Ice Cream</title>
+  <link rel="stylesheet" href="/assets/style/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <header class="p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="mb-0">Sean's Ice Cream</h1>
+      <a href="/public/index.php" class="btn btn-outline-light">Home</a>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-text text-dark">
+      <h2>How We Make Our Ice Cream</h2>
+    </div>
+  </section>
+
+  <section class="section-content container text-center">
+    <h3>Crafted with Care, For you to Share</h3>
+    <p>
+      At Sean’s Ice Cream, making each batch of ice cream is an art, a science, and a privelege. We begin our process with fresh, local ingredients including real cream, organic milk, and natural flavors, all from farms and trustworthy markets. No artificial factory made ice cream here.
+    </p>
+    <p>
+      Every morning we prepare small batches of ice cream by hand and from scratch, and this ensures the perfect balance of flavor and texture and freshness. We pasteurize our base, add truly natural ingredients, then churn it in small batches for a smooth, dense scoop you can't forget.
+    </p>
+    <p>
+      After the churning process, we swirl in mix-ins for flavors like fresh fruit, nuts, or baked items, which is home-prepared, and quickly frozen it to lock in that freshness. This method keeps our ice cream true and rich without an air of artificialness.
+    </p>
+    <p>
+      Every spoonful of ice cream tells a unique story, which is one of care, quality, and love for ice cream. Come visit us in Fordham, NY, and see why our ice cream is more than just dessert, it’s a handcrafted treat worth sharing.
+    </p>
+
+    <a href="/public/index.php" class="btn btn-primary btn-back">← Back to Home</a>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #dcd4f7;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .hero-banner {
+      background-image: url('/public/assets/images/hero-icecream.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      position: relative;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .hero-text h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .section-content {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: #f9f7ff;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .section-content h3 {
+      margin-bottom: 1rem;
+    }
+
+    .btn-back {
+      margin-top: 2rem;
+    }
+  </style>
